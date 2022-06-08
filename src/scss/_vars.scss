@@ -1,0 +1,18 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "Roboto", sans-serif;
+
+  // colors
+  --color-white: #fff;
+  --color-black: #22252e;
+  --color-orange: #ff8d00;
+  --color-text: #323642;
+  --color-text-grey: #889099;
+  --color-green: #4cb649;
+  --color-border: #d7d8d9;
+  --color-tags-bg: #f7f7f7;
+  --color-border-line: #ebeced;
+  --color-old-price: #f24458;
+}

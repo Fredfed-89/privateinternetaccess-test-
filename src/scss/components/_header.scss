@@ -1,0 +1,335 @@
+.header {
+  &__warning-inner {
+    @include flex-sa;
+    position: relative;
+
+    padding: 8px 6px;
+    background-color: var(--color-black);
+
+    @include mobile-m {
+      padding-right: 50px;
+    }
+
+    @include mobile-s {
+      padding: 10px 18px;
+      padding-right: 35px;
+    }
+  }
+
+  &__warning-list {
+    @include flex;
+
+    margin: 0 auto;
+    width: 100%;
+    max-width: 615px;
+    transform: translateX(2px);
+
+    @include mobile-l {
+      flex-wrap: wrap;
+    }
+
+    @include mobile-m {
+      justify-content: space-between;
+    }
+  }
+
+  &__warning-list-item {
+    position: relative;
+
+    @include mobile-m {
+      &--item-two {
+        width: 100%;
+        max-width: 169px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 32px;
+
+      @include mobile-l {
+        margin-right: 16px;
+      }
+
+      @include mobile-m {
+        margin-right: 6px;
+      }
+    }
+
+    @include mobile-s {
+
+      &--item-one {
+        margin-bottom: 3px;
+      }
+
+      &--item-four {
+        order: 1;
+      }
+
+      &--item-two {
+        margin-right: 15px;
+        order: 2;
+      }
+
+      &--item-three {
+        order: 3;
+      }
+    }
+  }
+
+  &__warning-item {
+    position: relative;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--color-text-grey);
+
+    &--icon::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 0;
+      background-image: url("../img/header-warning.svg");
+    }
+
+    &--color-text {
+      padding-left: 28px;
+      font-weight: 700;
+      color: var(--color-orange);
+    }
+
+    &--link {
+      position: absolute;
+      white-space: nowrap;
+      color: var(--color-white);
+      transform: translate(9px, 4px);
+
+      @include mobile-m {
+        position: relative;
+        transform: none;
+      }
+
+      @include mobile-s {
+        margin-right: 15px;
+      }
+
+      &:hover {
+        color: var(--color-orange);
+        transition: color 0.5s ease-in-out;
+      }
+    }
+  }
+
+  &__warning-btn {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 16px;
+    background-image: url("../img/header-warning-close.svg");
+
+    @include mobile-m {
+      top: 25%;
+    }
+
+    @include mobile-m {
+      top: 10px;
+      right: 10px
+    }
+  }
+
+  &__nav {
+    @include flex-sb;
+
+    position: relative;
+    padding: 50px 0 48px;
+
+    a {
+      text-decoration-line: none;
+    }
+
+    @include mobile-s {
+      padding-top: 25px;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    margin-left: 6px;
+    top: 3px;
+
+    @include macbook {
+      margin-left: 90px;
+      top: 0;
+    }
+
+    @include mobile-m {
+      margin-left: 70px;
+      top: 1px;
+    }
+
+    @include mobile-s {
+      margin-left: 40px;
+      top: 1px;
+    }
+
+    @include mobile-xs {
+      margin-left: 27px;
+      top: 1px;
+    }
+  }
+
+  &__nav-list {
+    @include flex-sb;
+
+    left: 59px;
+    top: 3px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 435px;
+
+    a {
+      color: var(--color-text);
+    }
+
+    @include macbook {
+      font-size: 18px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      max-width: inherit;
+      justify-content: center;
+      background: var(--color-white);
+      z-index: 10;
+      transition: all 0.3s ease-in-out;
+      color: var(--color-white);
+      transform: translateX(-106%);
+    }
+  }
+
+  &__list-btn {
+    margin-bottom: 6px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text);
+    transition: border 0.2s ease-out;
+
+    &:hover {
+      margin-bottom: 3px;
+      border-bottom: 3px solid var(--color-green);
+      text-decoration-line: none;
+    }
+
+    @include macbook {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__btns {
+    position: relative;
+    left: 137px;
+    top: 3px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include big-desktop {
+      left: 0;
+    }
+  }
+
+  &__btn-login {
+    margin-right: 5px;
+    padding: 9px 20px;
+    border: 1px solid var(--color-green);
+    border-radius: 30px;
+    text-align: center;
+    letter-spacing: 0.8px;
+    color: var(--color-green);
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-green);
+    }
+
+    @include mobile-m {
+      display: none;
+    }
+
+    &--inside-menu {
+      margin-top: 25px;
+      padding: 9px 20px;
+      border: 1px solid var(--color-green);
+      border-radius: 30px;
+      text-align: center;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--color-green);
+      transition: color 0.5s ease-in-out,
+        background-color 0.5s ease-in-out;
+
+      &:hover {
+        color: var(--color-white);
+        background-color: var(--color-green);
+      }
+
+      @include bigger-desktop {
+        display: none;
+      }
+
+      @include mobile-m {
+        display: block;
+      }
+    }
+  }
+
+  &__btn-started {
+    padding: 11px 31px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    background: linear-gradient(0deg, #4CB649 0%, #5DDF5A 100%);
+    border-radius: 30px;
+    color: var(--color-white);
+    transition: color 0.5s ease-in-out;
+
+    &:hover {
+      padding: 11px 30px;
+      border: 1px solid var(--color-green);
+      color: var(--color-green);
+      background: var(--color-white);
+    }
+
+    @include mobile-m {
+      padding: 11px 15px;
+      right: 5px;
+    }
+
+    @include mobile-s {
+      padding: 11px 15px;
+      white-space: nowrap;
+      position: absolute;
+      top: -12px;
+      right: -12px;
+
+      &:hover {
+        padding: 11px 14px;
+      }
+    }
+
+    @include mobile-xs {
+      padding: 7px 7px;
+      top: -7px;
+      right: 0;
+    }
+  }
+}
